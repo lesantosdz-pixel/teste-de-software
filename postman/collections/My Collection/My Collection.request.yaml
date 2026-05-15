@@ -1,0 +1,19 @@
+$kind: http-request
+url: "postman-echo.com/get?categoria =vestuario "
+method: GET
+queryParams:
+  "categoria ": "vestuario "
+body:
+  type: text
+  content: |-
+    {
+    	"name": "Add your name in the body"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+    language: text/javascript
+order: 3000
